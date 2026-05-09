@@ -1,6 +1,6 @@
 # Virtual Stock Trader
 
-English | [简体中文](README.zh-CN.md)
+English | [简体中文](README.zh-CN.md) | [日本語](README.ja.md)
 
 ## Project Note
 
