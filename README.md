@@ -1,5 +1,7 @@
 # Virtual Stock Trader
 
+English | [简体中文](README.zh-CN.md)
+
 ## Project Note
 
 This is a vibe coding project built mainly for learning and experimentation. Most of the code, documentation, and feature design were generated with AI assistance, then reviewed, tested, and adjusted by a human.
