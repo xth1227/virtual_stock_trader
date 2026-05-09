@@ -1,28 +1,28 @@
-# 虚拟炒股系统
+# Virtual Stock Trader
 
-## 项目说明
+## Project Note
 
-这是一个 vibe coding 项目，主要用于学习和实验。项目的大部分代码、文档和功能设计由 AI 辅助生成，再由人工检查、运行和调整。
+This is a vibe coding project built mainly for learning and experimentation. Most of the code, documentation, and feature design were generated with AI assistance, then reviewed, tested, and adjusted by a human.
 
-这是一个本地运行的虚拟炒股小程序：
+Virtual Stock Trader is a local paper-trading app:
 
-- 虚拟本金：100,000 元
-- 行情数据：通过 AkShare 获取公开行情
-- 交易：只修改本地 SQLite 数据库，不连接真实券商，不会动真钱
-- 支持：股票/ETF 代码查询、买入、卖出、持仓、交易记录
+- Starting virtual cash: 100,000 CNY
+- Market data: public quotes fetched through AkShare
+- Trading: updates only a local SQLite database; it does not connect to any real broker or move real money
+- Features: stock/ETF lookup, buy, sell, portfolio view, trade history, watchlist, and daily account snapshots
 
-## 安装
+## Installation
 
-建议使用 Python 3.9 或更高版本。
+Python 3.9 or later is recommended.
 
-先把项目下载到本地：
+Clone the repository:
 
 ```bash
 git clone https://github.com/xth1227/virtual_stock_trader.git
 cd virtual_stock_trader
 ```
 
-创建 Python 虚拟环境：
+Create a Python virtual environment:
 
 ```bash
 python -m venv .venv
@@ -44,23 +44,23 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-首次运行时，程序会自动在本地创建 `virtual_trader.db` 数据库文件，用来保存虚拟账户、持仓和交易记录。这个文件不会上传到 GitHub。
+On first launch, the app will automatically create a local `virtual_trader.db` database file to store the virtual account, positions, watchlist, snapshots, and trade history. This file is intentionally not uploaded to GitHub.
 
-## 使用
+## Usage
 
-浏览器打开 Streamlit 给出的地址，一般是：
+Open the URL shown by Streamlit in your browser. It is usually:
 
 ```text
 http://localhost:8501
 ```
 
-输入代码，例如：
+Example symbols:
 
-- 510300：沪深300ETF
-- 159919：沪深300ETF
-- 600519：贵州茅台
-- 000001：平安银行
+- 510300: CSI 300 ETF
+- 159919: CSI 300 ETF
+- 600519: Kweichow Moutai
+- 000001: Ping An Bank
 
-## 注意
+## Notes
 
-免费公开行情可能不是严格实时行情，也可能有延迟、频率限制或接口字段变化。这个程序适合练手，不适合真实交易决策。
+Public free market data may not be strictly real-time. It may have delays, rate limits, or upstream API field changes. This project is intended for practice and experimentation, not for real trading decisions.
