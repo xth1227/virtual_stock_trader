@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+
+# Local app data
+virtual_trader.db
+*.db
+
+# Streamlit local config/secrets
+.streamlit/secrets.toml
