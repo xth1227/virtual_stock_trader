@@ -6,10 +6,11 @@
 
 这是一个 vibe coding 项目，主要用于学习和实验。项目的大部分代码、文档和功能设计由 AI 辅助生成，再由人工检查、运行和调整。
 
-虚拟炒股系统是一个本地运行的模拟交易小程序：
+虚拟炒股系统是一个本地运行的模拟交易小程序，包含 A 股/ETF 和美股/ETF 两个独立入口：
 
 - 初始虚拟本金：100,000 元
-- 行情数据：通过 AkShare 获取公开行情
+- A 股行情数据：通过 AkShare 获取公开行情
+- 美股行情数据：通过 yfinance 获取 Yahoo Finance 行情
 - 交易方式：只修改本地 SQLite 数据库，不连接真实券商，不会动真钱
 - 支持功能：股票/ETF 代码查询、买入、卖出、持仓、自选列表、交易记录和每日账户快照
 
@@ -35,7 +36,6 @@ python -m venv .venv
 ```bash
 source .venv/bin/activate
 pip install -r requirements.txt
-streamlit run app.py
 ```
 
 ### Windows PowerShell
@@ -43,10 +43,21 @@ streamlit run app.py
 ```powershell
 .venv\Scripts\Activate.ps1
 pip install -r requirements.txt
+```
+
+运行 A 股/ETF 版本：
+
+```bash
 streamlit run app.py
 ```
 
-首次运行时，程序会自动在本地创建 `virtual_trader.db` 数据库文件，用来保存虚拟账户、持仓、自选列表、快照和交易记录。这个文件不会上传到 GitHub。
+运行美股/ETF 版本：
+
+```bash
+streamlit run app_us.py
+```
+
+首次运行时，程序会自动在本地创建数据库文件，用来保存虚拟账户、持仓、自选列表、快照和交易记录。A 股版本使用 `virtual_trader.db`，美股版本使用 `virtual_trader_us.db`。这些文件不会上传到 GitHub。
 
 ## 使用
 
@@ -58,10 +69,20 @@ http://localhost:8501
 
 示例代码：
 
+A 股/ETF 版本：
+
 - 510300：沪深300ETF
 - 159919：沪深300ETF
 - 600519：贵州茅台
 - 000001：平安银行
+
+美股/ETF 版本：
+
+- AAPL：Apple
+- MSFT：Microsoft
+- NVDA：NVIDIA
+- SPY：SPDR S&P 500 ETF Trust
+- QQQ：Invesco QQQ Trust
 
 ## 注意
 

@@ -6,10 +6,11 @@ English | [简体中文](README.zh-CN.md)
 
 This is a vibe coding project built mainly for learning and experimentation. Most of the code, documentation, and feature design were generated with AI assistance, then reviewed, tested, and adjusted by a human.
 
-Virtual Stock Trader is a local paper-trading app:
+Virtual Stock Trader is a local paper-trading app with separate China-market and US-market entry points:
 
 - Starting virtual cash: 100,000 CNY
-- Market data: public quotes fetched through AkShare
+- China-market data: public quotes fetched through AkShare
+- US-market data: public quotes fetched through Yahoo Finance via yfinance
 - Trading: updates only a local SQLite database; it does not connect to any real broker or move real money
 - Features: stock/ETF lookup, buy, sell, portfolio view, trade history, watchlist, and daily account snapshots
 
@@ -35,7 +36,6 @@ python -m venv .venv
 ```bash
 source .venv/bin/activate
 pip install -r requirements.txt
-streamlit run app.py
 ```
 
 ### Windows PowerShell
@@ -43,10 +43,21 @@ streamlit run app.py
 ```powershell
 .venv\Scripts\Activate.ps1
 pip install -r requirements.txt
+```
+
+Run the China-market version:
+
+```bash
 streamlit run app.py
 ```
 
-On first launch, the app will automatically create a local `virtual_trader.db` database file to store the virtual account, positions, watchlist, snapshots, and trade history. This file is intentionally not uploaded to GitHub.
+Run the US-market version:
+
+```bash
+streamlit run app_us.py
+```
+
+On first launch, the app will automatically create a local database file to store the virtual account, positions, watchlist, snapshots, and trade history. The China-market version uses `virtual_trader.db`; the US-market version uses `virtual_trader_us.db`. These files are intentionally not uploaded to GitHub.
 
 ## Usage
 
@@ -58,10 +69,20 @@ http://localhost:8501
 
 Example symbols:
 
+China-market version:
+
 - 510300: CSI 300 ETF
 - 159919: CSI 300 ETF
 - 600519: Kweichow Moutai
 - 000001: Ping An Bank
+
+US-market version:
+
+- AAPL: Apple
+- MSFT: Microsoft
+- NVDA: NVIDIA
+- SPY: SPDR S&P 500 ETF Trust
+- QQQ: Invesco QQQ Trust
 
 ## Notes
 
