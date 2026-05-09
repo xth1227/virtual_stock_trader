@@ -15,8 +15,16 @@
 
 建议使用 Python 3.9 或更高版本。
 
+先把项目下载到本地：
+
 ```bash
+git clone https://github.com/xth1227/virtual_stock_trader.git
 cd virtual_stock_trader
+```
+
+创建 Python 虚拟环境：
+
+```bash
 python -m venv .venv
 ```
 
@@ -35,6 +43,8 @@ streamlit run app.py
 pip install -r requirements.txt
 streamlit run app.py
 ```
+
+首次运行时，程序会自动在本地创建 `virtual_trader.db` 数据库文件，用来保存虚拟账户、持仓和交易记录。这个文件不会上传到 GitHub。
 
 ## 使用
 
